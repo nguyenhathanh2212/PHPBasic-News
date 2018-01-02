@@ -1,0 +1,22 @@
+# mở chức năng rewrite 
+RewriteEngine ON
+# định nghĩa thư mục gốc của web
+RewriteBase /
+# bắt đầu viết luật URL 
+
+# category page
+RewriteRule ^category/(.*)-([0-9]*)-p([0-9]*)$ category.php?idCat=$2&idpage=$3
+# category
+RewriteRule ^category/(.*)-([0-9]*)$ category.php?idCat=$2
+#fullpost
+RewriteRule ^fullpost/(.*)-([0-9]*).html$ fullpost.php?idNews=$2
+#search-page
+RewriteRule ^search/(.*)-p([0-9]*)$ search.php?txt=$1&idpage=$2
+#search
+RewriteRule ^search/(.*)$ search.php?txt=$1
+#about
+RewriteRule ^about$ about.php
+#blog
+RewriteRule ^blog$ blog.php
+#contact
+RewriteRule ^contact$ contact.php
